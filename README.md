@@ -4,7 +4,7 @@
 
 ![waku waku git-synced](./git-synced-wakuwaku.gif)
 
-`git-synced` is a tool that generates empty commits by mirroring the commit history from a secondary GitHub profile to plot contributions on your primary account.
+`git-synced` is a tool that generates empty commits that mirror the contribution graph from a secondary GitHub profile, plotting those contributions on your primary account.
 
 ## How to use
 
@@ -21,7 +21,7 @@
    For example, set the parameters `from=2024-01-01&to=2024-12-31`.
 
    ```text
-   https://github.com/apappas1129?tab=overview&from=2024-10-01&to=2024-10-18
+   https://github.com/apappas1129?tab=overview&from=2024-01-01&to=2024-12-31
    ```
 
 3. Save the entire HTML of the profile page as `index.html` (or your preferred filename) in the same directory as `index.js`.
@@ -51,4 +51,4 @@
 
 ---
 
-This repository is created after [**isturiz/sync-graph**](https://github.com/isturiz/sync-graph). If your secondary GitHub account is accessible publicly, I recommend using this tool instead to skip the need to manually create the HTML file containing your secondary account's contribution graph.
+This repository is created after [**isturiz/sync-graph**](https://github.com/isturiz/sync-graph). If your secondary GitHub account is accessible publicly, I recommend using this tool instead to skip the need of manually creating the HTML file containing your secondary account's contribution graph.
