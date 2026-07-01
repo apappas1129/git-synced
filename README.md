@@ -1,10 +1,12 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/tc39/ecma262) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/license-isc.svg)](https://forthebadge.com)
 
+[![npm version](https://img.shields.io/npm/v/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced) [![npm downloads](https://img.shields.io/npm/dm/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced)
+
 # git-synced
 
 ![waku waku git-synced](./git-synced-wakuwaku.gif)
 
-`git-synced` is a tool that generates empty commits that mirror the contribution graph from a secondary GitHub profile, plotting those contributions on your primary account.
+`git-synced` is a tool that generates empty commits that mirror the contribution graph from a secondary GitHub profile, plotting those contributions on your primary account. Published on npm as [`@apappas1129/git-synced`](https://www.npmjs.com/package/@apappas1129/git-synced).
 
 ## How to use
 
