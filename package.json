@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/apappas1129/git-synced#readme",
   "dependencies": {
-    "@inquirer/prompts": "^7.0.0",
+    "@inquirer/prompts": "^8.5.2",
     "cheerio": "^1.0.0",
     "yocto-spinner": "^0.1.1",
     "yoctocolors": "^2.1.1"
