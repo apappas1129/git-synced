@@ -1,6 +1,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/tc39/ecma262) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/license-isc.svg)](https://forthebadge.com)
 
-[![npm version](https://img.shields.io/npm/v/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced) [![npm downloads](https://img.shields.io/npm/dm/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced)
+[![npm version](https://img.shields.io/npm/v/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced) [![npm downloads](https://img.shields.io/npm/dm/@apappas1129/git-synced.svg)](https://www.npmjs.com/package/@apappas1129/git-synced) [![Test](https://github.com/apappas1129/git-synced/actions/workflows/test.yml/badge.svg)](https://github.com/apappas1129/git-synced/actions/workflows/test.yml)
 
 # git-synced
 
