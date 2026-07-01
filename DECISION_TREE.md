@@ -1,6 +1,6 @@
 # Decision Tree
 
-A map of every branch in the `git_synced` CLI flow, kept in sync with the code as the tool grows.
+A map of every branch in the `git-synced` CLI flow, kept in sync with the code as the tool grows.
 
 > **Keep this updated.** Any time you add a new prompt, flag, or branch to the flow, update the diagram and the matching entry below in the same change.
 
@@ -8,7 +8,7 @@ A map of every branch in the `git_synced` CLI flow, kept in sync with the code a
 
 ```mermaid
 flowchart TD
-  Start([git_synced invoked]) --> ParseArgs["parseArgs (src/cli.js)"]
+  Start([git-synced invoked]) --> ParseArgs["parseArgs (src/cli.js)"]
   ParseArgs --> HelpCheck{"--help / -h?"}
   HelpCheck -- yes --> PrintHelp[printHelp] --> ExitHelp(["exit 0"])
   HelpCheck -- no --> VersionCheck{"--version / -v?"}

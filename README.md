@@ -1,14 +1,14 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/tc39/ecma262) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/license-isc.svg)](https://forthebadge.com)
 
-# git_synced
+# git-synced
 
-![waku waku git_synced](./git-synced-wakuwaku.gif)
+![waku waku git-synced](./git-synced-wakuwaku.gif)
 
-`git_synced` is a tool that generates empty commits that mirror the contribution graph from a secondary GitHub profile, plotting those contributions on your primary account.
+`git-synced` is a tool that generates empty commits that mirror the contribution graph from a secondary GitHub profile, plotting those contributions on your primary account.
 
 ## How to use
 
-`git_synced` is a CLI you run from inside the git repository you want the mirrored commits added to — this should be a repository of your own, tied to your **primary** GitHub account. It does not need to be related to this tool's source in any way.
+`git-synced` is a CLI you run from inside the git repository you want the mirrored commits added to — this should be a repository of your own, tied to your **primary** GitHub account. It does not need to be related to this tool's source in any way.
 
 1. Browse to your secondary GitHub account's profile page and ensure that your desired date range of contributions graph is correctly set.
 
@@ -22,14 +22,14 @@
 3. `cd` into the git repository you want the commits created in, then run the tool with no install:
 
    ```bash
-   npx git_synced
+   npx @apappas1129/git-synced
    ```
 
-   Or install it globally once and reuse the `git_synced` command anywhere:
+   Or install it globally once and reuse the `git-synced` command anywhere:
 
    ```bash
-   npm i -g git_synced
-   git_synced
+   npm i -g @apappas1129/git-synced
+   git-synced
    ```
 
 4. Follow the prompts. When asked for the HTML file, point it at the file you saved in step 2 (a relative or absolute path both work).
@@ -43,7 +43,7 @@
 | `-h, --help` | Show usage information. |
 
 ```bash
-git_synced --file ./profile.html
+git-synced --file ./profile.html
 ```
 
 ## Why are my contributions not showing up?

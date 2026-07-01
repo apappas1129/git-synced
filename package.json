@@ -1,11 +1,11 @@
 {
-  "name": "git_synced",
+  "name": "@apappas1129/git-synced",
   "version": "1.0.0",
   "description": "Generate empty commits by mirroring the commit history from a secondary GitHub profile to plot contributions on your primary account.",
   "type": "module",
   "main": "index.js",
   "bin": {
-    "git_synced": "./index.js"
+    "git-synced": "./index.js"
   },
   "engines": {
     "node": ">=18.17"
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apappas1129/git_synced.git"
+    "url": "git+https://github.com/apappas1129/git-synced.git"
   },
   "keywords": [
     "contribution",
@@ -33,10 +33,13 @@
   ],
   "author": "Alexandros Pappas",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/apappas1129/git_synced/issues"
+  "publishConfig": {
+    "access": "public"
   },
-  "homepage": "https://github.com/apappas1129/git_synced#readme",
+  "bugs": {
+    "url": "https://github.com/apappas1129/git-synced/issues"
+  },
+  "homepage": "https://github.com/apappas1129/git-synced#readme",
   "dependencies": {
     "@inquirer/prompts": "^7.0.0",
     "cheerio": "^1.0.0",

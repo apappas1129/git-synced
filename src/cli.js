@@ -26,7 +26,7 @@ export function parseArgs(argv) {
 }
 
 export function printHelp() {
-  console.log(`Usage: git_synced [options]
+  console.log(`Usage: git-synced [options]
 
 Generate empty commits that mirror the contribution graph from a secondary
 GitHub profile, so those contributions also plot on your primary account.

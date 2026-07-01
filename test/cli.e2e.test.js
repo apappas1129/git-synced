@@ -20,7 +20,7 @@ function makeTempGitRepo() {
 test('--help prints usage and exits 0 without touching git', async () => {
   const { code, stdout } = await runCli({ cwd: tmpdir(), args: ['--help'] });
   assert.equal(code, 0);
-  assert.match(stdout, /Usage: git_synced/);
+  assert.match(stdout, /Usage: git-synced/);
 });
 
 test('--version prints the package version and exits 0', async () => {

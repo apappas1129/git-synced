@@ -10,7 +10,7 @@ export function ensureGitRepository() {
     execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' });
   } catch {
     console.error(red('✘ Error: This directory is not a git repository.'));
-    console.error('cd into the repository whose contributions you want to sync, then run git_synced again.');
+    console.error('cd into the repository whose contributions you want to sync, then run git-synced again.');
     process.exit(1);
   }
 }
