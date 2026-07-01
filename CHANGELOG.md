@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Bumped dependencies: `@inquirer/prompts` to 8.5.2, `cheerio` to 1.2.0, `yocto-spinner` to 1.2.0, `yoctocolors` to 2.1.2.
+
 ## 1.0.0
 
 - Published as an installable CLI: `npx @apappas1129/git-synced` or `npm i -g @apappas1129/git-synced`.

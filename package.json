@@ -1,6 +1,6 @@
 {
   "name": "@apappas1129/git-synced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate empty commits by mirroring the commit history from a secondary GitHub profile to plot contributions on your primary account.",
   "type": "module",
   "main": "index.js",
