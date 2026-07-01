@@ -43,7 +43,7 @@
   "dependencies": {
     "@inquirer/prompts": "^7.0.0",
     "cheerio": "^1.0.0",
-    "yocto-spinner": "^0.1.1",
+    "yocto-spinner": "^1.2.0",
     "yoctocolors": "^2.1.1"
   }
 }
