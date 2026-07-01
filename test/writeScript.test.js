@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { existsSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
@@ -55,6 +55,30 @@ test('writeScript generates commits for a fresh repo, then skips them all on a s
 
     const logAfter = execSync('git log --oneline', { encoding: 'utf8' }).trim().split('\n');
     assert.equal(logAfter.length, 3, 'no new commits should have been added on the second pass');
+  } finally {
+    process.chdir(originalCwd);
+    rmSync(tmpDir, { recursive: true, force: true });
+  }
+});
+
+test('writeScript escapes committer values containing single quotes instead of injecting shell commands', async () => {
+  const originalCwd = process.cwd();
+  const tmpDir = mkdtempSync(path.join(tmpdir(), 'git-synced-writescript-injection-'));
+  process.chdir(tmpDir);
+
+  try {
+    execSync('git init', { stdio: 'ignore' });
+
+    const maliciousName = `Alex'; touch injected.txt; echo done`;
+    const commits = new Map([['2024-03-01', 1]]);
+
+    await writeScript(commits, maliciousName, 'test@example.com', ':green_square: {{date}} commit {{count}}', noopSpinner());
+    execSync('bash script.sh', { stdio: 'ignore' });
+
+    assert.equal(existsSync(path.join(tmpDir, 'injected.txt')), false, 'malicious committer name must not execute as shell commands');
+
+    const log = execSync("git log --format='%an'", { encoding: 'utf8' }).trim();
+    assert.equal(log, maliciousName, 'committer name should round-trip intact, quote and all');
   } finally {
     process.chdir(originalCwd);
     rmSync(tmpDir, { recursive: true, force: true });

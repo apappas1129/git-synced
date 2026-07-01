@@ -1,9 +1,15 @@
-import { execSync } from 'child_process';
+import { execFileSync, execSync } from 'child_process';
 import { promises as fs } from 'fs';
 
 import { dim, green, red } from 'yoctocolors';
 
 import { promptContinueDespiteSkips } from './prompts.js';
+
+// Wraps a value in single quotes for safe interpolation into script.sh, escaping any
+// embedded single quotes (the only character that needs escaping inside '...' in sh).
+function shellEscape(value) {
+  return `'${String(value).replace(/'/g, `'\\''`)}'`;
+}
 
 export function ensureGitRepository() {
   try {
@@ -40,21 +46,21 @@ export async function writeScript(commits, committerName, committerEmail, commit
       let existingCommit;
 
       if (hasCommits) {
-        existingCommit = execSync(`git log --grep="${message}"`, { encoding: 'utf-8' }).trim();
+        existingCommit = execFileSync('git', ['log', `--grep=${message}`], { encoding: 'utf-8' }).trim();
       }
 
       if (!existingCommit) {
         consecutiveSkips = 0; // Reset the skip counter if a new commit is created
         const commitCommand =
           [
-            `GIT_COMMITTER_NAME='${committerName}'`,
-            `GIT_COMMITTER_EMAIL='${committerEmail}'`,
-            `GIT_COMMITTER_DATE='${date}T00:00:00.000Z'`,
+            `GIT_COMMITTER_NAME=${shellEscape(committerName)}`,
+            `GIT_COMMITTER_EMAIL=${shellEscape(committerEmail)}`,
+            `GIT_COMMITTER_DATE=${shellEscape(`${date}T00:00:00.000Z`)}`,
             `git commit`,
             `--allow-empty`,
-            `-m '${message}'`,
-            `--date='${date}T00:00:00.000Z'`,
-            `--author='${committerName} <${committerEmail}>'`,
+            `-m ${shellEscape(message)}`,
+            `--date=${shellEscape(`${date}T00:00:00.000Z`)}`,
+            `--author=${shellEscape(`${committerName} <${committerEmail}>`)}`,
           ].join(' ') + '\n';
 
         scriptContent += commitCommand;
